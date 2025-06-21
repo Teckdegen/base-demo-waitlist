@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { ChevronDown, Mail, Check, ExternalLink, Calendar, Zap, Shield, BarChart3, Smartphone, TrendingUp, Brain, Activity } from 'lucide-react';
 
@@ -55,13 +53,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 text-white relative overflow-hidden">
-      {/* Animated Background with Logo */}
-      <div className="absolute inset-0 opacity-5">
+      {/* Animated Background with Logo - More Visible */}
+      <div className="absolute inset-0 opacity-20">
         <div 
           className="absolute inset-0 bg-repeat animate-pulse"
           style={{
             backgroundImage: `url(/lovable-uploads/544e93af-4533-4de4-893f-7b718a4b0047.png)`,
-            backgroundSize: '150px 150px',
+            backgroundSize: '200px 200px',
             animation: 'float 6s ease-in-out infinite'
           }}
         ></div>
@@ -277,15 +275,25 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer with actual social links */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center gap-4 sm:gap-6 mb-4 sm:mb-6 animate-fade-in">
-            <a href="#" className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-125 hover:rotate-12 transform">
+            <a 
+              href="https://x.com/base_demo" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-125 hover:rotate-12 transform"
+            >
               <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
               <span className="sr-only">Twitter</span>
             </a>
-            <a href="#" className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-125 hover:rotate-12 transform">
+            <a 
+              href="https://t.me/basedemo" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-125 hover:rotate-12 transform"
+            >
               <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
               <span className="sr-only">Telegram</span>
             </a>
@@ -298,6 +306,7 @@ const Index = () => {
         </div>
       </footer>
 
+      {/* ... keep existing code (styles section) */}
       <style>
         {`
           @keyframes float {
@@ -338,4 +347,3 @@ const Index = () => {
 };
 
 export default Index;
-
