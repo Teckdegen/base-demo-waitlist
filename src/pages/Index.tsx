@@ -88,21 +88,12 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-          {/* Logo */}
-          <div className="mb-8" style={{animation: 'float 3s ease-in-out infinite'}}>
-            <img 
-              src="/lovable-uploads/544e93af-4533-4de4-893f-7b718a4b0047.png" 
-              alt="Base Demo Logo" 
-              className="w-32 h-32 mx-auto mb-4 drop-shadow-2xl animate-pulse"
-            />
-          </div>
-
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight animate-scale-in">
             Demo Trade Real Tokens with <span className="text-blue-200 animate-pulse">Zero Risk</span> on Base
           </h1>
           
           <p className="text-xl sm:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: '0.5s'}}>
-            Experience pro-level trading with fake ETH, real data, and <span className="text-green-300 font-semibold">AI assistance</span>. 
+            Experience pro-level trading with <span className="text-green-300 font-semibold">1500 USDC fake balance</span>, real data, and <span className="text-green-300 font-semibold">AI assistance</span>. 
             Perfect for learning without the stress.
           </p>
 
@@ -198,7 +189,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 animate-fade-in">About Base Demo</h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.3s'}}>
-              A Web3 fake trading simulator that lets you practice trading any token on Base using real-time data — 
+              A Web3 fake trading simulator that lets you practice trading any token on Base using real-time data with 1500 USDC fake balance — 
               without the risk, without gas fees, and with advanced AI guidance.
             </p>
           </div>
@@ -207,7 +198,7 @@ const Index = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 animate-fade-in" style={{animationDelay: '0.5s'}}>
               <Shield className="w-12 h-12 text-blue-200 mx-auto mb-4 animate-pulse" />
               <h3 className="text-xl font-semibold mb-3">Zero Risk</h3>
-              <p className="text-blue-100">Trade with fake ETH and learn without financial stress or gas fees.</p>
+              <p className="text-blue-100">Trade with 1500 USDC fake balance and learn without financial stress or gas fees.</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300 animate-fade-in" style={{animationDelay: '0.7s'}}>
@@ -232,7 +223,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: TrendingUp, title: "Demo Trade Any Base Token", desc: "Paste any contract address and start trading with fake ETH", delay: "0.1s" },
+              { icon: TrendingUp, title: "Demo Trade Any Base Token", desc: "Paste any contract address and start trading with 1500 USDC fake balance", delay: "0.1s" },
               { icon: BarChart3, title: "Live Token Charts", desc: "Real-time price charts powered by Chart.js and live data", delay: "0.2s" },
               { icon: Shield, title: "Trade History & Portfolio", desc: "Track your fake trades and portfolio performance", delay: "0.3s" },
               { icon: Zap, title: "Token Scanner", desc: "Discover trending tokens and analyze market movements", delay: "0.4s" },
@@ -288,16 +279,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-6 animate-fade-in">
-            <img 
-              src="/lovable-uploads/544e93af-4533-4de4-893f-7b718a4b0047.png" 
-              alt="Base Demo Logo" 
-              className="w-16 h-16 mx-auto mb-4 animate-pulse"
-            />
-            <h3 className="text-xl font-bold">Base Demo</h3>
-          </div>
-          
-          <div className="flex justify-center gap-6 mb-6 animate-fade-in" style={{animationDelay: '0.3s'}}>
+          <div className="flex justify-center gap-6 mb-6 animate-fade-in">
             <a href="#" className="text-blue-200 hover:text-white transition-colors hover:scale-110 transform duration-300">
               <ExternalLink className="w-6 h-6" />
               <span className="sr-only">Twitter</span>
@@ -308,33 +290,35 @@ const Index = () => {
             </a>
           </div>
           
-          <div className="text-blue-200 text-sm animate-fade-in" style={{animationDelay: '0.5s'}}>
+          <div className="text-blue-200 text-sm animate-fade-in" style={{animationDelay: '0.3s'}}>
             <p className="mb-2">Built for Base • Powered by Real Data • Enhanced by AI</p>
             <p>&copy; 2025 Base Demo. All rights reserved.</p>
           </div>
         </div>
       </footer>
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes scaleIn {
-          from { opacity: 0; transform: scale(0.9); }
-          to { opacity: 1; transform: scale(1); }
-        }
-        .animate-fade-in {
-          animation: fadeIn 0.6s ease-out forwards;
-        }
-        .animate-scale-in {
-          animation: scaleIn 0.6s ease-out forwards;
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+          }
+          .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+          }
+          .animate-scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+          }
+        `}
+      </style>
     </div>
   );
 };
