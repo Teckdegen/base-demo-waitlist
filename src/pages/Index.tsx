@@ -7,8 +7,8 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   // Telegram bot configuration - update these with your actual values
-  const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
-  const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID_HERE';
+  const TELEGRAM_BOT_TOKEN = '7914517071:AAE72Eeby7pgghoH3gKAkj6jL3om_glG27c';
+  const TELEGRAM_CHAT_ID = '6213503516';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
