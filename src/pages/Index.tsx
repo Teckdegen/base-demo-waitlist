@@ -1,5 +1,7 @@
+
 import React, { useState } from 'react';
 import { ChevronDown, Mail, Check, ExternalLink, Calendar, Zap, Shield, BarChart3, Smartphone, TrendingUp, Brain, Activity } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Index = () => {
   const [email, setEmail] = useState('');
@@ -51,15 +53,43 @@ const Index = () => {
     document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Platform preview images
+  const platformImages = [
+    {
+      src: "/lovable-uploads/49c651b6-3edd-4b4b-bc81-9698e76f5150.png",
+      alt: "Portfolio Overview - Demo Wallet Dashboard",
+      title: "Portfolio Overview",
+      description: "Track your portfolio with 1500 USDC starting balance"
+    },
+    {
+      src: "/lovable-uploads/b8a52ddc-2c02-469e-8d0c-7916c19769f8.png",
+      alt: "KTA Trading Interface",
+      title: "Live Trading",
+      description: "Trade any token with real-time charts and data"
+    },
+    {
+      src: "/lovable-uploads/c5eb8213-c498-42ee-b94a-61a38f38b5f7.png",
+      alt: "Tasks and Challenges",
+      title: "Trading Tasks",
+      description: "Complete challenges and compete with others"
+    },
+    {
+      src: "/lovable-uploads/928a1183-dd60-453c-90d5-f9a48f4ba6ba.png",
+      alt: "P&L Report with AI Summary",
+      title: "AI Performance Reports",
+      description: "Get AI-powered insights on your trading performance"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 text-white relative overflow-hidden">
       {/* Animated Background with Logo - More Visible */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
         <div 
           className="absolute inset-0 bg-repeat animate-pulse"
           style={{
             backgroundImage: `url(/lovable-uploads/544e93af-4533-4de4-893f-7b718a4b0047.png)`,
-            backgroundSize: '200px 200px',
+            backgroundSize: '250px 250px',
             animation: 'float 6s ease-in-out infinite'
           }}
         ></div>
@@ -87,51 +117,68 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 animate-fade-in">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-scale-in transition-all duration-700 hover:scale-105 hover:text-blue-200 cursor-default">
-            Demo Trade Real Tokens with <span className="text-blue-200 animate-pulse hover:animate-bounce transition-all duration-500">Zero Risk</span> on Base
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-scale-in transition-all duration-700 hover:scale-110 hover:text-blue-200 cursor-default active:scale-125 active:rotate-12">
+            Demo Trade Real Tokens with <span className="text-blue-200 animate-pulse hover:animate-bounce transition-all duration-500 active:animate-spin">Zero Risk</span> on Base
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed animate-fade-in hover:scale-105 transition-all duration-500 cursor-default px-2" style={{animationDelay: '0.5s'}}>
-            Experience pro-level trading with <span className="text-green-300 font-semibold hover:animate-pulse transition-all duration-300 cursor-pointer">1500 USDC fake balance</span>, real data, and <span className="text-green-300 font-semibold hover:animate-pulse transition-all duration-300 cursor-pointer">AI assistance</span>. 
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed animate-fade-in hover:scale-110 transition-all duration-500 cursor-default px-2 active:scale-125 active:rotate-6" style={{animationDelay: '0.5s'}}>
+            Experience pro-level trading with <span className="text-green-300 font-semibold hover:animate-pulse transition-all duration-300 cursor-pointer active:animate-bounce active:scale-125">1500 USDC starting balance</span>, real data, and <span className="text-green-300 font-semibold hover:animate-pulse transition-all duration-300 cursor-pointer active:animate-spin active:scale-125">AI assistance</span>. 
             Perfect for learning without the stress.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 animate-fade-in" style={{animationDelay: '1s'}}>
             <button 
               onClick={scrollToWaitlist}
-              className="bg-white text-blue-600 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-50 transition-all duration-500 transform hover:scale-110 hover:rotate-3 shadow-xl animate-pulse hover:shadow-2xl active:scale-95 active:rotate-0"
+              className="bg-white text-blue-600 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-50 transition-all duration-500 transform hover:scale-125 hover:rotate-12 shadow-xl animate-pulse hover:shadow-2xl active:scale-150 active:rotate-45 active:bg-yellow-200"
             >
               Join the Waitlist
             </button>
-            <div className="flex items-center gap-2 text-blue-200 animate-bounce hover:scale-110 transition-all duration-300 cursor-pointer">
-              <Calendar className="w-4 h-4 sm:w-5 sm:h-5 hover:rotate-12 transition-transform duration-300" />
+            <div className="flex items-center gap-2 text-blue-200 animate-bounce hover:scale-125 transition-all duration-300 cursor-pointer active:scale-150 active:rotate-12">
+              <Calendar className="w-4 h-4 sm:w-5 sm:h-5 hover:rotate-45 transition-transform duration-300 active:animate-spin" />
               <span className="text-sm sm:text-base">Launching Q3 2025</span>
             </div>
           </div>
 
-          <div className="mt-12 sm:mt-16 animate-bounce hover:scale-125 transition-all duration-500 cursor-pointer" style={{animationDelay: '2s'}} onClick={scrollToWaitlist}>
-            <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 mx-auto hover:animate-spin" />
+          <div className="mt-12 sm:mt-16 animate-bounce hover:scale-150 transition-all duration-500 cursor-pointer active:scale-200 active:animate-spin" style={{animationDelay: '2s'}} onClick={scrollToWaitlist}>
+            <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 mx-auto hover:animate-spin active:animate-ping" />
           </div>
         </div>
       </section>
 
-      {/* Platform Preview Section */}
+      {/* Platform Preview Section with Slideshow */}
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white/10 backdrop-blur-sm relative">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-4xl font-bold mb-6 sm:mb-8 animate-fade-in hover:scale-105 transition-all duration-500 cursor-default">See the Platform in Action</h2>
-          <p className="text-base sm:text-xl text-blue-100 mb-8 sm:mb-12 animate-fade-in hover:scale-105 transition-all duration-300 cursor-default px-2" style={{animationDelay: '0.3s'}}>
+          <h2 className="text-2xl sm:text-4xl font-bold mb-6 sm:mb-8 animate-fade-in hover:scale-110 transition-all duration-500 cursor-default active:scale-125 active:rotate-6">See the Platform in Action</h2>
+          <p className="text-base sm:text-xl text-blue-100 mb-8 sm:mb-12 animate-fade-in hover:scale-110 transition-all duration-300 cursor-default px-2 active:scale-125 active:rotate-3" style={{animationDelay: '0.3s'}}>
             Get a preview of what you'll be trading with - real portfolio tracking, live data, and AI insights
           </p>
           
-          <div className="relative max-w-4xl mx-auto animate-scale-in hover:scale-105 transition-all duration-700 cursor-pointer" style={{animationDelay: '0.6s'}}>
-            <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-1 rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:rotate-1">
-              <img 
-                src="/lovable-uploads/e6b5ff70-d9a5-415d-bf9a-c10c5e1db141.png" 
-                alt="Base Demo Platform Preview" 
-                className="w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-700 hover:rotate-1"
-              />
-            </div>
-            <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-green-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full font-semibold animate-pulse hover:animate-bounce hover:scale-110 transition-all duration-300 cursor-pointer text-xs sm:text-base">
+          <div className="relative max-w-5xl mx-auto animate-scale-in hover:scale-105 transition-all duration-700 cursor-pointer" style={{animationDelay: '0.6s'}}>
+            <Carousel className="w-full">
+              <CarouselContent>
+                {platformImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-1 rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 hover:rotate-3 active:scale-110 active:rotate-12">
+                      <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4">
+                        <img 
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-700 hover:rotate-2 active:scale-125 active:rotate-6"
+                        />
+                        <div className="mt-4 text-center">
+                          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 hover:scale-110 transition-all duration-300 active:scale-125 active:text-yellow-300">{image.title}</h3>
+                          <p className="text-blue-100 hover:scale-105 transition-all duration-300 active:scale-115 active:text-green-300">{image.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hover:scale-125 active:scale-150 active:rotate-45 transition-all duration-300" />
+              <CarouselNext className="hover:scale-125 active:scale-150 active:rotate-45 transition-all duration-300" />
+            </Carousel>
+            
+            <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-green-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full font-semibold animate-pulse hover:animate-bounce hover:scale-125 transition-all duration-300 cursor-pointer text-xs sm:text-base active:scale-150 active:rotate-12 active:bg-yellow-400">
               Live Preview
             </div>
           </div>
@@ -141,18 +188,18 @@ const Index = () => {
       {/* Waitlist Section */}
       <section id="waitlist" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white text-gray-800 relative">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-4xl font-bold mb-6 sm:mb-8 text-blue-600 animate-fade-in hover:scale-105 transition-all duration-500 cursor-default">Join the Future of Demo Trading</h2>
+          <h2 className="text-2xl sm:text-4xl font-bold mb-6 sm:mb-8 text-blue-600 animate-fade-in hover:scale-110 transition-all duration-500 cursor-default active:scale-125 active:rotate-6">Join the Future of Demo Trading</h2>
           
           {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 animate-scale-in hover:scale-105 transition-all duration-500" style={{animationDelay: '0.3s'}}>
-              <div className="relative hover:scale-105 transition-all duration-300">
-                <Mail className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5 hover:text-blue-500 hover:scale-125 transition-all duration-300" />
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 animate-scale-in hover:scale-105 transition-all duration-500 active:scale-115" style={{animationDelay: '0.3s'}}>
+              <div className="relative hover:scale-110 transition-all duration-300 active:scale-125">
+                <Mail className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5 hover:text-blue-500 hover:scale-150 transition-all duration-300 active:animate-spin" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-4 border-2 border-gray-200 rounded-full text-base sm:text-lg focus:border-blue-500 focus:outline-none transition-all duration-500 hover:shadow-lg hover:scale-105 focus:scale-105 focus:rotate-1"
+                  className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-4 border-2 border-gray-200 rounded-full text-base sm:text-lg focus:border-blue-500 focus:outline-none transition-all duration-500 hover:shadow-lg hover:scale-105 focus:scale-110 focus:rotate-3 active:scale-115"
                   required
                 />
               </div>
@@ -160,7 +207,7 @@ const Index = () => {
               <button
                 type="submit"
                 disabled={isLoading || !email}
-                className="w-full bg-blue-600 text-white py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-500 transform hover:scale-105 hover:rotate-1 shadow-lg hover:shadow-xl active:scale-95 active:rotate-0"
+                className="w-full bg-blue-600 text-white py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-500 transform hover:scale-110 hover:rotate-3 shadow-lg hover:shadow-xl active:scale-125 active:rotate-12"
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center gap-2">
@@ -173,10 +220,10 @@ const Index = () => {
               </button>
             </form>
           ) : (
-            <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-6 sm:p-8 animate-scale-in hover:scale-105 transition-all duration-500">
-              <Check className="w-12 h-12 sm:w-16 sm:h-16 text-green-500 mx-auto mb-4 animate-bounce hover:animate-spin hover:scale-125 transition-all duration-500" />
-              <h3 className="text-xl sm:text-2xl font-bold text-green-700 mb-2 hover:scale-105 transition-all duration-300 cursor-default">Thanks! We'll be in touch.</h3>
-              <p className="text-green-600 hover:scale-105 transition-all duration-300 cursor-default">You're now on the waitlist for Base Demo. We'll notify you when we launch!</p>
+            <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-6 sm:p-8 animate-scale-in hover:scale-110 transition-all duration-500 active:scale-125">
+              <Check className="w-12 h-12 sm:w-16 sm:h-16 text-green-500 mx-auto mb-4 animate-bounce hover:animate-spin hover:scale-150 transition-all duration-500 active:scale-200" />
+              <h3 className="text-xl sm:text-2xl font-bold text-green-700 mb-2 hover:scale-110 transition-all duration-300 cursor-default active:scale-125">Thanks! We'll be in touch.</h3>
+              <p className="text-green-600 hover:scale-105 transition-all duration-300 cursor-default active:scale-115">You're now on the waitlist for Base Demo. We'll notify you when we launch!</p>
             </div>
           )}
         </div>
@@ -186,30 +233,30 @@ const Index = () => {
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 animate-fade-in hover:scale-105 transition-all duration-500 cursor-default">About Base Demo</h2>
-            <p className="text-base sm:text-xl text-blue-100 max-w-3xl mx-auto animate-fade-in hover:scale-105 transition-all duration-300 cursor-default px-2" style={{animationDelay: '0.3s'}}>
-              A Web3 fake trading simulator that lets you practice trading any token on Base using real-time data with 1500 USDC fake balance — 
+            <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 animate-fade-in hover:scale-110 transition-all duration-500 cursor-default active:scale-125 active:rotate-6">About Base Demo</h2>
+            <p className="text-base sm:text-xl text-blue-100 max-w-3xl mx-auto animate-fade-in hover:scale-110 transition-all duration-300 cursor-default px-2 active:scale-125 active:rotate-3" style={{animationDelay: '0.3s'}}>
+              A Web3 fake trading simulator that lets you practice trading any token on Base using real-time data with 1500 USDC starting balance — 
               without the risk, without gas fees, and with advanced AI guidance.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-4 sm:gap-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center hover:scale-105 hover:rotate-2 transition-all duration-500 animate-fade-in hover:bg-white/20 cursor-pointer" style={{animationDelay: '0.5s'}}>
-              <Shield className="w-8 h-8 sm:w-12 sm:h-12 text-blue-200 mx-auto mb-3 sm:mb-4 animate-pulse hover:animate-spin hover:scale-125 transition-all duration-500" />
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 hover:text-blue-200 transition-all duration-300">Zero Risk</h3>
-              <p className="text-sm sm:text-base text-blue-100 hover:scale-105 transition-all duration-300">Trade with 1500 USDC fake balance and learn without financial stress or gas fees.</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center hover:scale-110 hover:rotate-6 transition-all duration-500 animate-fade-in hover:bg-white/20 cursor-pointer active:scale-125 active:rotate-12" style={{animationDelay: '0.5s'}}>
+              <Shield className="w-8 h-8 sm:w-12 sm:h-12 text-blue-200 mx-auto mb-3 sm:mb-4 animate-pulse hover:animate-spin hover:scale-150 transition-all duration-500 active:scale-200" />
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 hover:text-blue-200 transition-all duration-300 active:scale-125">Zero Risk</h3>
+              <p className="text-sm sm:text-base text-blue-100 hover:scale-105 transition-all duration-300 active:scale-115">Trade with 1500 USDC starting balance and learn without financial stress or gas fees.</p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center hover:scale-105 hover:rotate-2 transition-all duration-500 animate-fade-in hover:bg-white/20 cursor-pointer" style={{animationDelay: '0.7s'}}>
-              <BarChart3 className="w-8 h-8 sm:w-12 sm:h-12 text-blue-200 mx-auto mb-3 sm:mb-4 animate-pulse hover:animate-bounce hover:scale-125 transition-all duration-500" />
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 hover:text-blue-200 transition-all duration-300">Real Data</h3>
-              <p className="text-sm sm:text-base text-blue-100 hover:scale-105 transition-all duration-300">Live charts and real-time token data powered by Dexscreener API.</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center hover:scale-110 hover:rotate-6 transition-all duration-500 animate-fade-in hover:bg-white/20 cursor-pointer active:scale-125 active:rotate-12" style={{animationDelay: '0.7s'}}>
+              <BarChart3 className="w-8 h-8 sm:w-12 sm:h-12 text-blue-200 mx-auto mb-3 sm:mb-4 animate-pulse hover:animate-bounce hover:scale-150 transition-all duration-500 active:scale-200" />
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 hover:text-blue-200 transition-all duration-300 active:scale-125">Real Data</h3>
+              <p className="text-sm sm:text-base text-blue-100 hover:scale-105 transition-all duration-300 active:scale-115">Live charts and real-time token data powered by Dexscreener API.</p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center hover:scale-105 hover:rotate-2 transition-all duration-500 animate-fade-in hover:bg-white/20 cursor-pointer" style={{animationDelay: '0.9s'}}>
-              <Brain className="w-8 h-8 sm:w-12 sm:h-12 text-blue-200 mx-auto mb-3 sm:mb-4 animate-pulse hover:animate-ping hover:scale-125 transition-all duration-500" />
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 hover:text-blue-200 transition-all duration-300">AI Powered</h3>
-              <p className="text-sm sm:text-base text-blue-100 hover:scale-105 transition-all duration-300">Get smart trading insights and personalized feedback with advanced AI integration.</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center hover:scale-110 hover:rotate-6 transition-all duration-500 animate-fade-in hover:bg-white/20 cursor-pointer active:scale-125 active:rotate-12" style={{animationDelay: '0.9s'}}>
+              <Brain className="w-8 h-8 sm:w-12 sm:h-12 text-blue-200 mx-auto mb-3 sm:mb-4 animate-pulse hover:animate-ping hover:scale-150 transition-all duration-500 active:scale-200" />
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 hover:text-blue-200 transition-all duration-300 active:scale-125">AI Powered</h3>
+              <p className="text-sm sm:text-base text-blue-100 hover:scale-105 transition-all duration-300 active:scale-115">Get smart trading insights and personalized feedback with advanced AI integration.</p>
             </div>
           </div>
         </div>
@@ -218,11 +265,11 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 animate-fade-in hover:scale-105 transition-all duration-500 cursor-default">Features Preview</h2>
+          <h2 className="text-2xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 animate-fade-in hover:scale-110 transition-all duration-500 cursor-default active:scale-125 active:rotate-6">Features Preview</h2>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
             {[
-              { icon: TrendingUp, title: "Demo Trade Any Base Token", desc: "Paste any contract address and start trading with 1500 USDC fake balance", delay: "0.1s" },
+              { icon: TrendingUp, title: "Demo Trade Any Base Token", desc: "Paste any contract address and start trading with 1500 USDC starting balance", delay: "0.1s" },
               { icon: BarChart3, title: "Live Token Charts", desc: "Real-time price charts powered by Chart.js and live data", delay: "0.2s" },
               { icon: Shield, title: "Trade History & Portfolio", desc: "Track your fake trades and portfolio performance", delay: "0.3s" },
               { icon: Zap, title: "Token Scanner", desc: "Discover trending tokens and analyze market movements", delay: "0.4s" },
@@ -231,12 +278,12 @@ const Index = () => {
             ].map((feature, index) => (
               <div 
                 key={index} 
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:scale-105 hover:rotate-1 transition-all duration-500 animate-fade-in hover:bg-white/20 cursor-pointer hover:shadow-xl" 
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 hover:scale-110 hover:rotate-3 transition-all duration-500 animate-fade-in hover:bg-white/20 cursor-pointer hover:shadow-xl active:scale-125 active:rotate-12" 
                 style={{animationDelay: feature.delay}}
               >
-                <feature.icon className="w-6 h-6 sm:w-10 sm:h-10 text-blue-200 mb-3 sm:mb-4 animate-pulse hover:animate-spin hover:scale-125 transition-all duration-500" />
-                <h3 className="text-base sm:text-lg font-semibold mb-2 hover:text-blue-200 transition-all duration-300">{feature.title}</h3>
-                <p className="text-blue-100 text-xs sm:text-sm hover:scale-105 transition-all duration-300">{feature.desc}</p>
+                <feature.icon className="w-6 h-6 sm:w-10 sm:h-10 text-blue-200 mb-3 sm:mb-4 animate-pulse hover:animate-spin hover:scale-150 transition-all duration-500 active:scale-200" />
+                <h3 className="text-base sm:text-lg font-semibold mb-2 hover:text-blue-200 transition-all duration-300 active:scale-125">{feature.title}</h3>
+                <p className="text-blue-100 text-xs sm:text-sm hover:scale-105 transition-all duration-300 active:scale-115">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -246,7 +293,7 @@ const Index = () => {
       {/* Roadmap Section */}
       <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 animate-fade-in hover:scale-105 transition-all duration-500 cursor-default">Roadmap</h2>
+          <h2 className="text-2xl sm:text-4xl font-bold text-center mb-12 sm:mb-16 animate-fade-in hover:scale-110 transition-all duration-500 cursor-default active:scale-125 active:rotate-6">Roadmap</h2>
           
           <div className="space-y-4 sm:space-y-8">
             {[
@@ -257,17 +304,17 @@ const Index = () => {
             ].map((item, index) => (
               <div 
                 key={index} 
-                className={`flex items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-xl hover:scale-105 hover:rotate-1 transition-all duration-500 animate-fade-in ${item.status === 'target' ? 'bg-blue-400/20 border-2 border-blue-300 hover:bg-blue-400/30' : 'bg-white/10 hover:bg-white/20'} backdrop-blur-sm cursor-pointer hover:shadow-xl`}
+                className={`flex items-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-xl hover:scale-110 hover:rotate-3 transition-all duration-500 animate-fade-in ${item.status === 'target' ? 'bg-blue-400/20 border-2 border-blue-300 hover:bg-blue-400/30' : 'bg-white/10 hover:bg-white/20'} backdrop-blur-sm cursor-pointer hover:shadow-xl active:scale-125 active:rotate-12`}
                 style={{animationDelay: item.delay}}
               >
-                <div className="text-2xl sm:text-3xl animate-bounce hover:animate-spin hover:scale-125 transition-all duration-500">{item.icon}</div>
+                <div className="text-2xl sm:text-3xl animate-bounce hover:animate-spin hover:scale-150 transition-all duration-500 active:scale-200">{item.icon}</div>
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
-                    <span className="text-blue-200 font-medium text-sm sm:text-base hover:scale-105 transition-all duration-300">{item.period}</span>
-                    {item.status === 'target' && <span className="bg-blue-300 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold animate-pulse hover:animate-bounce hover:scale-110 transition-all duration-300 w-fit">TARGET LAUNCH</span>}
+                    <span className="text-blue-200 font-medium text-sm sm:text-base hover:scale-110 transition-all duration-300 active:scale-125">{item.period}</span>
+                    {item.status === 'target' && <span className="bg-blue-300 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold animate-pulse hover:animate-bounce hover:scale-125 transition-all duration-300 w-fit active:scale-150">TARGET LAUNCH</span>}
                   </div>
-                  <h3 className="text-lg sm:text-xl font-semibold mb-1 hover:text-blue-200 transition-all duration-300">{item.title}</h3>
-                  <p className="text-blue-100 text-sm sm:text-base hover:scale-105 transition-all duration-300">{item.desc}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold mb-1 hover:text-blue-200 transition-all duration-300 active:scale-125">{item.title}</h3>
+                  <p className="text-blue-100 text-sm sm:text-base hover:scale-105 transition-all duration-300 active:scale-115">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -275,15 +322,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer with actual social links */}
+      {/* Footer with Twitter and Telegram links */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="flex justify-center gap-4 sm:gap-6 mb-4 sm:mb-6 animate-fade-in">
+          <div className="flex justify-center gap-6 sm:gap-8 mb-4 sm:mb-6 animate-fade-in">
             <a 
               href="https://x.com/base_demo" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-125 hover:rotate-12 transform"
+              className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-150 hover:rotate-45 transform active:scale-200 active:rotate-90"
             >
               <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
               <span className="sr-only">Twitter</span>
@@ -292,21 +339,21 @@ const Index = () => {
               href="https://t.me/basedemo" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-125 hover:rotate-12 transform"
+              className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-150 hover:rotate-45 transform active:scale-200 active:rotate-90"
             >
               <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
               <span className="sr-only">Telegram</span>
             </a>
           </div>
           
-          <div className="text-blue-200 text-xs sm:text-sm animate-fade-in hover:scale-105 transition-all duration-300 cursor-default" style={{animationDelay: '0.3s'}}>
+          <div className="text-blue-200 text-xs sm:text-sm animate-fade-in hover:scale-110 transition-all duration-300 cursor-default active:scale-125" style={{animationDelay: '0.3s'}}>
             <p className="mb-2">Built for Base • Powered by Real Data • Enhanced by AI</p>
             <p>&copy; 2025 Base Demo. All rights reserved.</p>
           </div>
         </div>
       </footer>
 
-      {/* ... keep existing code (styles section) */}
+      {/* Enhanced CSS Styles */}
       <style>
         {`
           @keyframes float {
@@ -333,12 +380,28 @@ const Index = () => {
             .hover\\:scale-105:active { transform: scale(1.05); }
             .hover\\:scale-110:active { transform: scale(1.1); }
             .hover\\:scale-125:active { transform: scale(1.25); }
+            .hover\\:scale-150:active { transform: scale(1.5); }
             .hover\\:rotate-1:active { transform: rotate(1deg); }
             .hover\\:rotate-3:active { transform: rotate(3deg); }
+            .hover\\:rotate-6:active { transform: rotate(6deg); }
             .hover\\:rotate-12:active { transform: rotate(12deg); }
+            .hover\\:rotate-45:active { transform: rotate(45deg); }
             .hover\\:animate-spin:active { animation: spin 1s linear infinite; }
             .hover\\:animate-bounce:active { animation: bounce 1s infinite; }
             .hover\\:animate-ping:active { animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+            .active\\:scale-115:active { transform: scale(1.15); }
+            .active\\:scale-125:active { transform: scale(1.25); }
+            .active\\:scale-150:active { transform: scale(1.5); }
+            .active\\:scale-200:active { transform: scale(2); }
+            .active\\:rotate-12:active { transform: rotate(12deg); }
+            .active\\:rotate-45:active { transform: rotate(45deg); }
+            .active\\:rotate-90:active { transform: rotate(90deg); }
+            .active\\:animate-spin:active { animation: spin 1s linear infinite; }
+            .active\\:animate-bounce:active { animation: bounce 1s infinite; }
+            .active\\:text-yellow-300:active { color: #fde047; }
+            .active\\:text-green-300:active { color: #86efac; }
+            .active\\:bg-yellow-200:active { background-color: #fef08a; }
+            .active\\:bg-yellow-400:active { background-color: #facc15; }
           }
         `}
       </style>
