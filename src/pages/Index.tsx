@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { ChevronDown, Mail, Check, ExternalLink, Calendar, Zap, Shield, BarChart3, Smartphone, TrendingUp, Brain, Activity } from 'lucide-react';
+import { ChevronDown, Mail, Check, Twitter, MessageCircle, Calendar, Zap, Shield, BarChart3, Smartphone, TrendingUp, Brain, Activity } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -340,7 +341,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-150 hover:rotate-45 transform active:scale-200 active:rotate-90"
             >
-              <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />
               <span className="sr-only">Twitter</span>
             </a>
             <a 
@@ -349,7 +350,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="text-blue-200 hover:text-white transition-all duration-500 hover:scale-150 hover:rotate-45 transform active:scale-200 active:rotate-90"
             >
-              <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
+              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
               <span className="sr-only">Telegram</span>
             </a>
           </div>
