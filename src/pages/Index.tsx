@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { ChevronDown, Mail, Check, ExternalLink, Calendar, Zap, Shield, BarChart3, Smartphone, TrendingUp, Brain, Activity } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Index = () => {
   const [email, setEmail] = useState('');
@@ -121,7 +121,7 @@ const Index = () => {
             Demo Trade Real Tokens with <span className="text-blue-200 animate-pulse hover:animate-bounce transition-all duration-500 active:animate-spin">Zero Risk</span> on Base
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed animate-fade-in hover:scale-110 transition-all duration-500 cursor-default px-2 active:scale-125 active:rotate-6" style={{animationDelay: '0.5s'}}>
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed animate-fade-in hover:scale-110 transition-all duration-300 cursor-default px-2 active:scale-125 active:rotate-6" style={{animationDelay: '0.5s'}}>
             Experience pro-level trading with <span className="text-green-300 font-semibold hover:animate-pulse transition-all duration-300 cursor-pointer active:animate-bounce active:scale-125">1500 USDC starting balance</span>, real data, and <span className="text-green-300 font-semibold hover:animate-pulse transition-all duration-300 cursor-pointer active:animate-spin active:scale-125">AI assistance</span>. 
             Perfect for learning without the stress.
           </p>
@@ -154,7 +154,15 @@ const Index = () => {
           </p>
           
           <div className="relative max-w-5xl mx-auto animate-scale-in hover:scale-105 transition-all duration-700 cursor-pointer" style={{animationDelay: '0.6s'}}>
-            <Carousel className="w-full">
+            <Carousel 
+              className="w-full"
+              plugins={[
+                Autoplay({
+                  delay: 2000,
+                  stopOnInteraction: true,
+                })
+              ]}
+            >
               <CarouselContent>
                 {platformImages.map((image, index) => (
                   <CarouselItem key={index}>
@@ -179,7 +187,7 @@ const Index = () => {
             </Carousel>
             
             <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-green-500 text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full font-semibold animate-pulse hover:animate-bounce hover:scale-125 transition-all duration-300 cursor-pointer text-xs sm:text-base active:scale-150 active:rotate-12 active:bg-yellow-400">
-              Live Preview
+              Auto Play
             </div>
           </div>
         </div>
