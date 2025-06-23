@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronDown, Mail, Check, Twitter, MessageCircle, Calendar, Zap, Shield, BarChart3, Smartphone, TrendingUp, Brain, Activity } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -244,7 +243,7 @@ const Index = () => {
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 animate-fade-in hover:scale-110 transition-all duration-500 cursor-default active:scale-125 active:rotate-6">About Base Demo</h2>
             <p className="text-base sm:text-xl text-blue-100 max-w-3xl mx-auto animate-fade-in hover:scale-110 transition-all duration-300 cursor-default px-2 active:scale-125 active:rotate-3" style={{animationDelay: '0.3s'}}>
-              A Web3 fake trading simulator that lets you practice trading any token on Base using real-time data with 1500 USDC starting balance — 
+              A Web3 demo trading simulator that lets you practice memecoin trading on Base using real-time data with 1500 USDC starting balance — 
               without the risk, without gas fees, and with advanced AI guidance.
             </p>
           </div>
